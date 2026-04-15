@@ -20,7 +20,7 @@ def _validate(dataset, model_c, model_f, config, iteration, device):
     H, W = dataset.H, dataset.W
     batch_size = config["batch_size"]
 
-     with torch.no_grad():
+    with torch.no_grad():
         val_rays_o, val_rays_d = gen_rays(H, W, dataset.val_pose, dataset.fx, dataset.fy, dataset.ox, dataset.oy)
         val_rays_o = val_rays_o.reshape(-1, 3)
         val_rays_d = val_rays_d.reshape(-1, 3)
