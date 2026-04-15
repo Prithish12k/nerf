@@ -1,0 +1,16 @@
+dataset_type: colmap
+data_dir: /kaggle/input/my-scene
+device: cuda
+precompute_rays: true
+N_c: 64
+N_f: 128
+batch_size: 1024
+N_iters: 300000
+L_pos: 10
+L_dir: 4
+lr: 5e-4
+t_near: 2.0   # only used for blender
+t_far: 6.0    # only used for blender
+save_dir: /kaggle/working
+val_every: 10000
+ckpt_every: 5000
