@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 from dataset import ColmapDataset, BlenderDataset
 from model import Net
-from render import render_rays, gen_rays, get_360_video
+from render import render_rays, gen_rays 
 
 def load_config(path):
     with open(path, "r") as f:
