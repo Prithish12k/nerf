@@ -75,7 +75,7 @@ def train(config):
             split = "train",
             device = device,
             precompute_rays = config["precompute_rays"],
-            t0 = config["t_near"]
+            t0 = config["t_near"],
             t1 = config["t_far"]
         )
 
