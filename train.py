@@ -138,7 +138,7 @@ def train(config):
         scheduler.step()
 
         if iteration % 100 == 0:
-            pbar.set_postfix({"loss: f"{loss.item():.4f}"})
+            pbar.set_postfix({"loss": f"{loss.item():.4f}"})
 
         if iteration % config["ckpt_every"] == 0 and iteration > 0:
             torch.save({
