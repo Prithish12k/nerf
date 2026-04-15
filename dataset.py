@@ -286,8 +286,8 @@ class ColmapDataset():
         self.all_rays_o = torch.cat(all_rays_o, dim=0)
         self.all_rays_d = torch.cat(all_rays_d, dim=0)
         self.all_colors = torch.cat(all_colors, dim=0)
-        self.all_t0 = torch.cat(all_t0, dim=0)      # (N_img*H*W,)
-        self.all_t1 = torch.cat(all_t1, dim=0)
+        self.all_t0 = torch.cat(all_t0, dim=0)[:, None]      # (N_img*H*W,)
+        self.all_t1 = torch.cat(all_t1, dim=0)[:, None]
 
     def get_rays(self, idx, pixel_coords=None):
         pose = self.poses[idx]
