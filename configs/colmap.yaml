@@ -1,4 +1,4 @@
-dataset_type: colmap
+dataset_type: Colmap
 data_dir: /kaggle/input/datasets/prithishchaudhary/detergent/undistorted 
 device: cuda
 precompute_rays: true
