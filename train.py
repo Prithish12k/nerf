@@ -126,7 +126,7 @@ def train(config):
         model_c.train()
         model_f.train()
 
-        rays_o, rays_d, targe_rgb, t0, t1 = dataset.sample_batch(config["batch_size"])
+        rays_o, rays_d, target_rgb, t0, t1 = dataset.sample_batch(config["batch_size"])
 
         predicted_c, predicted_f = render_rays(rays_o, rays_d, t0, t1, model_c, model_f, config["N_c"], config["N_f"], L_pos, L_dir)
 
