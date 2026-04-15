@@ -1,5 +1,5 @@
 dataset_type: blender
-data_dir: /kaggle/input/my-scene
+data_dir: /kaggle/input/datasets/prithishchaudhary/blender-nerf/nerf_synthetic/lego
 device: cuda
 precompute_rays: true
 N_c: 64
