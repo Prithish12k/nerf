@@ -79,7 +79,7 @@ def train(config):
             t1 = config["t_far"]
         )
 
-    elif config["dataset_type"] = "Colmap":
+    elif config["dataset_type"] == "Colmap":
         dataset = ColmapDataset(
             basedir = config["data_dir"],
             device = device,
