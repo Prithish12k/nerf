@@ -119,7 +119,7 @@ def train(config):
         start_iter = ckpt["step"] + 1
         print(f"Resumed from iteration {start_iter}") 
 
-    pbar = tqdm(range(start_iter, config["N_iters"], ncols=100))
+    pbar = tqdm(range(start_iter, config["N_iters"]), ncols=100)
 
     for iteration in pbar:
 
