@@ -36,6 +36,10 @@ def strat_sample(ray_origin, ray_dir, t0, t1, N):
     device = ray_origin.device
     batch  = ray_origin.shape[0]
 
+    if not (isinstance(t0, torch.Tensor) and t0.dim() >= 2):
+        t0 = torch.full((batch, 1), float(t0), device=device)
+        t1 = torch.full((batch, 1), float(t1), device=device)
+
     # evenly spaced offsets from 0→1, one per sample
     u = torch.linspace(0.0, 1.0, N + 1, device=device)   # (N+1,)
     
