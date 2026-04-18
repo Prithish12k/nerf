@@ -1,7 +1,7 @@
 model_name: model3_pe_hierarchical
 
 data_dir: /kaggle/input/datasets/prithishchaudhary/detergent/scooty
-dave_dir: /kaggle/working
+save_dir: /kaggle/working
 
 dataset_type: Colmap
 precompute_rays: true
