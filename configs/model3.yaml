@@ -4,7 +4,7 @@ data_dir: /kaggle/input/datasets/prithishchaudhary/scooty/undistorted
 save_dir: /kaggle/working
 
 dataset_type: Colmap
-precompute_rays: true
+precompute_rays: false
 
 t_near: 2.0
 t_far: 6.0
