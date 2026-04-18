@@ -1,0 +1,29 @@
+model_name: model2_pe_stratified
+
+data_dir: /kaggle/input/datasets/prithishchaudhary/detergent/undistorted
+dave_dir: /kaggle/working
+
+dataset_type: Colmap
+precompute_rays: true
+
+t_near: 2.0
+t_far: 6.0
+
+L_pos: 10
+L_dir: 4
+
+N_c: 64
+N_f: 0
+
+use_hierarchical: false
+hierarchical: false
+
+device: cuda
+lr: 5.0e-4
+N_iters: 200000
+batch_size: 1024
+
+val_every: 5000
+ckpt_every: 10000
+
+# resume_ckpt: outputs/model2/ckpts/ckpt_050000.pth

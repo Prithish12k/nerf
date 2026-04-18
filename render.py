@@ -122,7 +122,7 @@ def vol_rendering(rgb, sigma, t, white_bg = True):
 
     return color
 
-def render_rays(rays_o, rays_d, t0, t1, model_c, model_f, N_c, N_f, L_pos, L_dir):
+def render_rays(rays_o, rays_d, t0, t1, model_c, model_f, N_c, N_f, L_pos, L_dir, use_hierarchical=True, return_weights=False):
 
     batch_size = rays_o.shape[0]
 
@@ -146,6 +146,14 @@ def render_rays(rays_o, rays_d, t0, t1, model_c, model_f, N_c, N_f, L_pos, L_dir
 
     predicted_c = vol_rendering(rgb_c, sigma_c, t)
 
+    if not use_hierarchical:
+        if return_weights:
+            weights_c = get_points_w(sigma_c.detach(), t)
+
+            return predicted_c, predicted_c, weights_c, t, weights_c, t
+
+        return predicted_c, predicted_c
+
     # FINE NETWORK
 
     t_n = hierarchical_sample(sigma_c.detach(), t.detach(), N_f)
@@ -161,5 +169,12 @@ def render_rays(rays_o, rays_d, t0, t1, model_c, model_f, N_c, N_f, L_pos, L_dir
     sigma_f = sigma_f.reshape(batch_size, N_c + N_f, 1)
 
     predicted_f = vol_rendering(rgb_f, sigma_f, t_n)
+
+    if return_weights:
+
+        weights_c = get_points_w(sigma_c.detach(), t)
+        weights_f = get_points_w(sigma_f.detach(), t_n)
+
+        return predicted_c, predicted_f, weights_c, t, weights_f, t_n
 
     return predicted_c, predicted_f
