@@ -1,6 +1,6 @@
 model_name: model2_pe_stratified
 
-data_dir: /kaggle/input/datasets/prithishchaudhary/detergent/undistorted
+data_dir: /kaggle/input/datasets/prithishchaudhary/detergent/scooty
 dave_dir: /kaggle/working
 
 dataset_type: Colmap
