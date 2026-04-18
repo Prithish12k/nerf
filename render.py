@@ -111,7 +111,7 @@ def get_points_w(sigma, t):
     # 1e-10 is for numerical stability
     return T*alpha
 
-def vol_rendering(rgb, sigma, t, white_bg = True):
+def vol_rendering(rgb, sigma, t, white_bg = False):
     # rgb:   (batch_size, N, 3)
     # sigma: (batch_size, N, 1)
     # t:     (batch_size, N)
