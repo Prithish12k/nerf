@@ -29,4 +29,4 @@ batch_size: 1024
 val_every: 5000
 ckpt_every: 10000
 
-# resume_ckpt: outputs/model3/ckpts/ckpt_100000.pth
+resume_ckpt: /kaggle/input/datasets/prithishchaudhary/ckpt-100000/ckpt_100000.pth

@@ -270,6 +270,14 @@ def train(config):
         if iteration % config["val_every"] == 0 and iteration > 0:
             _validate(dataset, model_c, model_f, config, iteration, device, lpips_model, log)
 
+    torch.save({
+        "model_c": model_c.state_dict(),
+        "model_f": model_f.state_dict(),
+        "optimizer": optimizer.state_dict(),
+        "scheduler": scheduler.state_dict(),
+        "step": config["N_iters"] - 1,
+    }, f"{save_dir}/ckpts/ckpt_{config['N_iters']:06d}.pth")
+
     print("\nRunning final evaluation...")
     t0_val, t1_val = dataset.get_bounds(-1)
     render_fns = [build_render_fn(dataset, model_c, model_f, config,
