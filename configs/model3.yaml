@@ -1,6 +1,6 @@
 model_name: model3_pe_hierarchical
 
-data_dir: /content/undistorted
+data_dir: /kaggle/input/datasets/prithishchaudhary09/scooty-data/undistorted
 save_dir: /kaggle/working
 
 dataset_type: Colmap
