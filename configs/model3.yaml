@@ -1,6 +1,6 @@
 model_name: model3_pe_hierarchical
 
-data_dir: /kaggle/input/datasets/prithishchaudhary/scooty/undistorted
+data_dir: /kaggle/input/datasets/prithishchaudhary09/scooty-data/undistorted
 save_dir: /kaggle/working
 
 dataset_type: Colmap
@@ -29,4 +29,4 @@ batch_size: 1024
 val_every: 5000
 ckpt_every: 10000
 
-resume_ckpt: /kaggle/input/datasets/prithishchaudhary/ckpt-100000/ckpt_100000.pth
+resume_ckpt: /kaggle/input/datasets/prithishchaudhary09/scooty/ckpt_190000.pth
